@@ -121,16 +121,3 @@ my-app/
 ├── tsconfig.json      # TypeScript config
 └── README.md
 ```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please ensure you use **pnpm** for consistency.
-
-1. Fork the repo
-2. Create your feature branch: `git checkout -b feat/new-component`
-3. Install deps: `pnpm install`
-4. Commit your changes: `git commit -m 'feat: add new component'`
-5. Push to the branch: `git push origin feat/new-component`
-6. Open a pull request
-
----
