@@ -54,7 +54,7 @@ Check out the live version: [UserHub](https://ems-next-framer.vercel.app/)
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/my-app.git
+git clone https://github.com/abdullahalsuad/my-app.git
 cd my-app
 ```
 
