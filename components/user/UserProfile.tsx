@@ -24,6 +24,7 @@ const UserProfile = ({ userId }: Props) => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // data fetching
   useEffect(() => {
     const loadUser = async () => {
       try {
@@ -82,6 +83,7 @@ const UserProfile = ({ userId }: Props) => {
           </motion.div>
           <span>Go Back</span>
         </motion.button>
+
         {/* Hero Section */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0, y: -30 }}
