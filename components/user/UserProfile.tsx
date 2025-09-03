@@ -14,13 +14,14 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import LoadingComponent from "../LoadingComponent";
+import { User } from "@/types/user";
 
 interface Props {
   userId: number;
 }
 
 const UserProfile = ({ userId }: Props) => {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -31,8 +32,12 @@ const UserProfile = ({ userId }: Props) => {
         const res = await fetchUserById(userId);
         if (res.error) throw new Error(res.error);
         setUser(res.data);
-      } catch (err: any) {
-        setError(err.message || "Failed to load user");
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          console.error("Fetch failed:", err.message);
+        } else {
+          console.error("Unknown error:", err);
+        }
       } finally {
         setLoading(false);
       }
@@ -45,6 +50,10 @@ const UserProfile = ({ userId }: Props) => {
     return <LoadingComponent />;
   }
 
+  // user actually loaded
+  if (!user) {
+    return <div>No user data available.</div>;
+  }
   // error handling
   if (error) {
     return (
@@ -304,7 +313,7 @@ const UserProfile = ({ userId }: Props) => {
             className="bg-gray-800 border border-teal-500/30 rounded-lg p-4"
           >
             <p className="text-sm text-gray-400 mb-1">Company Motto</p>
-            <p className="text-teal-400 italic">"{user.company.catchPhrase}"</p>
+            <p className="text-teal-400 italic">{user.company.catchPhrase}</p>
           </motion.div>
         </motion.div>
       </motion.div>

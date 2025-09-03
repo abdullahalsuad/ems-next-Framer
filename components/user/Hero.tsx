@@ -1,6 +1,5 @@
 "use client";
 import { motion, Variants } from "framer-motion";
-import { Users, Search } from "lucide-react";
 
 // Animation Variants
 const fadeUp: Variants = {
