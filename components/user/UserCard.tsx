@@ -1,9 +1,11 @@
-"use client"; // Required for motion
+"use client";
 
 import { motion, Variants } from "framer-motion";
 import { User, Mail, Phone, MapPin, Globe } from "lucide-react";
+import Link from "next/link";
 
 type UserCardProps = {
+  Userid: number;
   name: string;
   username: string;
   email: string;
@@ -19,6 +21,7 @@ const slideLeft: Variants = {
 };
 
 export default function UserCard({
+  Userid,
   name,
   username,
   email,
@@ -73,9 +76,12 @@ export default function UserCard({
       </div>
 
       {/* View Details Button */}
-      <button className="w-full py-3 px-4 bg-gradient-to-r from-teal-500 to-teal-800 hover:from-teal-600 hover:to-teal-800 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-gray-900 cursor-pointer">
+      <Link
+        href={`/${Userid}`}
+        className="w-full py-3 px-4 bg-gradient-to-r from-teal-500 to-teal-800 hover:from-teal-600 hover:to-teal-800 text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-gray-900 cursor-pointer"
+      >
         View Details
-      </button>
+      </Link>
     </motion.div>
   );
 }

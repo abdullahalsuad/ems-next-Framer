@@ -1,9 +1,7 @@
+import LoadingComponent from "@/components/LoadingComponent";
+
 const Loading = () => {
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <p className="text-gray-500 animate-pulse">Loading users...</p>
-    </div>
-  );
+  return <LoadingComponent />;
 };
 
 export default Loading;

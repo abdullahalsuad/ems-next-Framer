@@ -13,6 +13,7 @@ const UserList = async () => {
       {users.map((user) => (
         <UserCard
           key={user.id}
+          Userid={user.id}
           name={user.name}
           username={user.username}
           email={user.email}
