@@ -17,7 +17,7 @@ const fadeUp: Variants = {
 
 const Hero = () => {
   return (
-    <div className="min-h-screen px-4 py-10 md:py-16 ">
+    <div className="px-4 py-10 md:py-16 ">
       {/* Logo */}
       <motion.div
         variants={fadeUp}
