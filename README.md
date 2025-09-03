@@ -1,4 +1,4 @@
-# My App
+# UserHub
 
 🚀 A modern web application built with cutting-edge technologies. Fast, responsive, and animated with a sleek UI.
 
@@ -45,7 +45,7 @@
 
 ## 🌐 Live Demo
 
-Check out the live version: [https://my-app.example.com](https://my-app.example.com)
+Check out the live version: [UserHub](https://ems-next-framer.vercel.app/)
 
 ![My App Screenshot](demo1.png)
 
