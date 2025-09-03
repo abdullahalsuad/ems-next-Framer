@@ -101,7 +101,7 @@ const UserListClient = ({ users }: { users: User[] }) => {
         </div>
 
         {/* Mobile Card View */}
-        <div className="sm:hidden divide-y divide-red-700 ">
+        <div className="sm:hidden divide-y divide-teal-900 ">
           {currentUsers.length > 0 ? (
             currentUsers.map((user) => (
               <Link

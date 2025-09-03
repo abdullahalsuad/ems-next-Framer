@@ -75,7 +75,7 @@ const UserProfile = ({ userId }: Props) => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -30 }}
         transition={{ duration: 0.6 }}
-        className="w-8/12 mx-auto p-6 space-y-6"
+        className="lg:w-8/12 mx-auto p-6 space-y-6"
       >
         {/* go back */}
         <motion.button
@@ -158,7 +158,6 @@ const UserProfile = ({ userId }: Props) => {
                 transition={{ delay: 0.5 }}
               >
                 <div className="flex items-start space-x-2">
-                  <Mail className="w-4 h-4 text-teal-400 mt-1" />
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
                     <a
@@ -178,7 +177,6 @@ const UserProfile = ({ userId }: Props) => {
                 transition={{ delay: 0.6 }}
               >
                 <div className="flex items-start space-x-2">
-                  <Phone className="w-4 h-4 text-teal-400 mt-1" />
                   <div>
                     <p className="text-sm text-gray-400">Phone</p>
                     <a
@@ -198,7 +196,6 @@ const UserProfile = ({ userId }: Props) => {
                 transition={{ delay: 0.7 }}
               >
                 <div className="flex items-start space-x-2">
-                  <Globe className="w-4 h-4 text-teal-400 mt-1" />
                   <div>
                     <p className="text-sm text-gray-400">Website</p>
                     <a
@@ -237,7 +234,7 @@ const UserProfile = ({ userId }: Props) => {
               >
                 <div className="border-b border-gray-700 pb-2">
                   <p className="text-sm text-gray-400">Street Address</p>
-                  <p className="text-gray-300">
+                  <p className="text-teal-400 hover:text-teal-300 transition-colors flex items-center">
                     {user.address.street}, {user.address.suite}
                   </p>
                 </div>
@@ -251,7 +248,7 @@ const UserProfile = ({ userId }: Props) => {
               >
                 <div className="border-b border-gray-700 pb-2">
                   <p className="text-sm text-gray-400">City & Zip Code</p>
-                  <p className="text-gray-300">
+                  <p className="text-teal-400 hover:text-teal-300 transition-colors flex items-center">
                     {user.address.city}, {user.address.zipcode}
                   </p>
                 </div>
@@ -265,7 +262,7 @@ const UserProfile = ({ userId }: Props) => {
               >
                 <div>
                   <p className="text-sm text-gray-400">Coordinates</p>
-                  <p className="text-gray-300">
+                  <p className="text-teal-400 hover:text-teal-300 transition-colors flex items-center">
                     Lat: {user.address.geo.lat}, Lng: {user.address.geo.lng}
                   </p>
                 </div>
@@ -302,7 +299,9 @@ const UserProfile = ({ userId }: Props) => {
               transition={{ delay: 1.0 }}
             >
               <p className="text-sm text-gray-400">Business Focus</p>
-              <p className="text-gray-300">{user.company.bs}</p>
+              <p className="text-teal-400 hover:text-teal-300 transition-colors flex items-center">
+                {user.company.bs}
+              </p>
             </motion.div>
           </div>
 
